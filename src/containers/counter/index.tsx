@@ -6,7 +6,7 @@ import { Text } from '@/components/ui/text'
 export function Counter () {
   const [count, setCount] = useState(0)
   return (
-    <View className='flex flex-col items-center gap-4 p-4'>
+    <View className='flex flex-col items-center gap-4 p-8'>
       <Text className='text-2xl font-bold'>Cross platform UI test</Text>
       <Text className=''>Count: {count}</Text>
       <Button
