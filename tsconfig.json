@@ -2,6 +2,7 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "composite": true,
+    "moduleSuffixes": [".native", ".web", ""],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -22,7 +23,11 @@
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "babel.config.js",
+    "postcss.config.js",
+    "metro.config.js",
+    "tailwind.config.js"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
