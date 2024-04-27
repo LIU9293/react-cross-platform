@@ -70,5 +70,9 @@ module.exports = {
       },
     },
   },
+  corePlugins: {
+    // preflight: false
+    preflight: process.env.TARO_ENV === 'weapp' ? false : true,
+  },
   plugins: [require("tailwindcss-animate")]
 }

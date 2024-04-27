@@ -5,7 +5,7 @@
     "moduleSuffixes": [".native", ".web", ""],
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    // "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
