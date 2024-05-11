@@ -1,9 +1,10 @@
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
+import { LoginCard } from '@/containers/login-card'
 
 export default function Index() {
   return (
-    <View className='p-2'>
-      <Text>Hello world again!</Text>
+    <View className='flex p-2'>
+      <LoginCard />
     </View>
   )
 }

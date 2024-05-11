@@ -34,6 +34,8 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     },
     mini: {
       postcss: {
+        tailwindcss: {},
+        autoprefixer: {},
         pxtransform: { enable: false },
         cssModules: { enable: false }
       }

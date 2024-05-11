@@ -1,0 +1,7 @@
+- [ ] Icons
+  - Preload fontawesome icon for all platforms
+  - Handling SVG and PNG files for all platforms
+- [ ] Translation
+  - Do we need to use 3rd party package?
+  - If not, can we make i18n function type safe?
+- [ ] Theme, handle dark/light theme in all platforms

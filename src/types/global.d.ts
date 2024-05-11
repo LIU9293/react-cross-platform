@@ -1,5 +1,6 @@
 /// <reference types="@tarojs/taro" />
 /// <reference types="vite/client" />
+/// <reference types="nativewind/types" />
 
 declare module '*.png';
 declare module '*.gif';
