@@ -1,9 +1,11 @@
 import { LoginCard } from '@/containers/login-card'
+import { TestCard } from '@/components/test-card'
 
 export default function App() {
   return (
     <div className="p-2 flex flex-col items-center">
       <LoginCard />
+      <TestCard />
     </div>
   )
 }
