@@ -3,7 +3,7 @@ import * as SplashScreen from 'expo-splash-screen'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import { useEffect } from 'react'
-import '../assets/global.css'
+import '@/assets/global.css'
 
 export {
   // Catch any errors thrown by the Layout component.

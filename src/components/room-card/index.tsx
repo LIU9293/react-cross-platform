@@ -1,27 +1,33 @@
-import { Text, View } from '@/components/ui'
+import { Text, Image, View } from '@/components/ui'
+import { BusyIndicator } from '@/components/busy-indicator'
 import { distance } from '@/lib/utils'
-// import BusyIndicator from '@components/BusyIndicator'
-// import { getFillByMinMax } from '@utils'
-// import { AtIcon } from '@components/TaroUI'
-// import { useSelector } from 'react-redux'
-// import t from '@i18n'
-// import './style.css'
+import { TRoom } from '@/types/room'
 
-export function RoomCard ({
-  // id,
-  // cover,
-  // name,
-  // location,
-  // address,
-  // allSeats,
-  // availableSeats,
-  // onClick,
-  // active = true,
-  // longitude,
-  // latitude,
-  // specialPromoteTag,
-  // boxes
-}) {
+export function RoomCard (props: Omit<TRoom, 'images'>) {
+  return (
+    <View className='w-full max-w-[400px] bg-white dark:bg-gray-950 rounded-lg overflow-hidden flex flex-row gap-2'>
+      <Image
+        className="w-[140px] h-[100px] object-cover rounded-lg overflow-hidden"
+        height="100"
+        width="140"
+        mode='aspectFill'
+        src={props.cover}
+      />
+      <View className='p-2 flex flex-col flex-1'>
+        <View className='flex flex-row justify-between items-center w-full'>
+          <Text className='font-bold text-md dark:text-white'>{props.nameLocale}</Text>
+          <Text className='text-gray-500'>1.1公里</Text>
+        </View>
+        <View className='flex flex-row items-center'>
+          <Text className='text-gray-500 text-sm'>{props.addressLocale}</Text>
+        </View>
+        <View className='flex flex-row items-center mt-2'>
+          <BusyIndicator fill={3} lessIsGreen />
+        </View>
+      </View>
+    </View>
+  )
+
   // const fill = getFillByMinMax(allSeats - availableSeats, allSeats)
   // let range = ''
   // if (longitude && latitude && location && location.indexOf(',') > 0) {

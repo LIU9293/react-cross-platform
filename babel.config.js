@@ -4,7 +4,8 @@ module.exports = function (api) {
   if (!!process.env.TARO_ENV) {
     return {
       presets: [
-        ["taro", { framework: 'react', ts: true, compiler: 'vite' }]  
+        ["taro", { framework: 'react', ts: true, compiler: 'vite' }],
+        "nativewind/babel",
       ]
     }
   }

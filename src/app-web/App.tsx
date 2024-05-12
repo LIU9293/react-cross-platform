@@ -1,11 +1,9 @@
-import { LoginCard } from '@/containers/login-card'
-import { TestCard } from '@/components/test-card'
+import { RoomList } from "@/containers/room-list"
 
 export default function App() {
   return (
     <div className="p-2 flex flex-col items-center">
-      <LoginCard />
-      <TestCard />
+      <RoomList />
     </div>
   )
 }
