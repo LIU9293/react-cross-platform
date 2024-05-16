@@ -1,29 +1,14 @@
-import { useState, useEffect } from 'react'
-import { View } from '@/components/ui'
+import { View, Text } from '@/components/ui'
 import { RoomCard } from "@/components/room-card"
-import { TRoom, TRoomServer, transformType } from '@/types/room'
-import { request } from '@/lib/request'
+import { useRoomList } from '@/store/room-list'
  
 export function RoomList () {
-  const [roomList, setRoomList] = useState<TRoom[]>([])
-
-  useEffect(() => {
-    getRoomList()
-  }, [])
-
-  async function getRoomList () {
-    const response = await request({
-      url: 'https://prod.mogroom.com/api/app/summary',
-      method: 'GET',
-      header: { appid: 'wx9949952662bbb0c4' }
-    }) as { rooms: TRoomServer[] }
-    
-    setRoomList(response.rooms.map(transformType))
-  }
-
+  const { data: roomList, loading } = useRoomList()
+  
   return (
     <View className='flex flex-col items-center gap-4 w-full box-border'>
-      {roomList.map(room => {
+      {loading && <Text className='dark:text-white'>Loading...</Text>}
+      {roomList && roomList.map(room => {
         return (
           <RoomCard
             key={room.id}
