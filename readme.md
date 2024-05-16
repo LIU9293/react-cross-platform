@@ -1,7 +1,11 @@
 - [x] Rendering component on all platforms
   - web
   - react native
-  - taro 
+  - taro
+
+- [ ] Auth 
+  - 小程序微信授权，openid
+  - 其他平台手机号登录
 
 - [ ] Fonts / Icons
   - Only import SVG file from local or url, not using tags because miniapp does not support.
