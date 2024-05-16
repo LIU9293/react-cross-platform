@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react'
 import { request } from '@/lib/request'
 
-type RequestObject<T, U> = {
+type RequestObject<T, U, P> = {
   url?: string
   headers?: Record<string, string>
   method?: "GET" | "POST" | "PUT" | "DELETE"
   body?: object | undefined
   transformFunction?: (data: T) => U
+  payload?: P
 }
 
 /***
   * T -> Type of the data returned by the request
   * U -> Type of the data returned by the hook
+  * P -> Request payload
   **/
-export function createRequestHook<T, U>(
-  requestObject: RequestObject<T, U>
+export function createRequestHook<T, U, P>(
+  requestObject: RequestObject<T, U, P>
 ) {
   return function useRequestHook() {
     const [data, setData] = useState<U | null>(null)
@@ -30,7 +32,8 @@ export function createRequestHook<T, U>(
               ? `https://prod.mogroom.com/api${requestObject.url}`
               : 'https://prod.mogroom.com/api/app/summary',
             method: requestObject.method || 'GET',
-            header: requestObject.headers || {}
+            header: requestObject.headers || {},
+            payload: requestObject.payload as (Record<string, any> | undefined),
           }) as T
 
           if (!requestObject.transformFunction) {
@@ -53,3 +56,6 @@ export function createRequestHook<T, U>(
     return { data, loading, error }
   }
 }
+
+export function createRequestHookPagination<T, U, P>(){}
+

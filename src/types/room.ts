@@ -1,4 +1,3 @@
-
 export type TRoomServer = {
   id: number
   name: string

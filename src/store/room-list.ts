@@ -3,7 +3,8 @@ import { createRequestHook } from '@/lib/request-factory'
 
 export const useRoomList = createRequestHook<
   { rooms: TRoomServer[] },
-  TRoom[]
+  TRoom[],
+  undefined
 >({
   url: '/app/summary',
   headers: { appid: 'wx9949952662bbb0c4' },
@@ -11,4 +12,3 @@ export const useRoomList = createRequestHook<
     return data.rooms.map(room => transformType(room))
   }
 })
-
