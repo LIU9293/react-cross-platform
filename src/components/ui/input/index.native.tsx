@@ -3,7 +3,7 @@ import { TextInput } from 'react-native'
 import { cn } from '@/lib/utils'
 
 const inputModeMap = {
-  text: 'none',
+  text: 'text',
   number: 'decimal',
   email: 'email',
   password: 'text',
