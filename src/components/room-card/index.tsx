@@ -8,8 +8,8 @@ export function RoomCard (props: Omit<TRoom, 'images'>) {
     <View className='w-full max-w-[400px] bg-white dark:bg-gray-950 rounded-lg overflow-hidden flex flex-row gap-2'>
       <Image
         className="w-[140px] h-[100px] object-cover rounded-lg overflow-hidden"
-        height="100"
-        width="140"
+        height={100}
+        width={140}
         mode='aspectFill'
         src={props.cover}
       />

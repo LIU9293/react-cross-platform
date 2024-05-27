@@ -1,7 +1,7 @@
 import { transformType, TRoom, TRoomServer } from '@/types/room'
-import { createRequestHook } from '@/lib/request-factory'
+import { createRequestFactory } from '@/lib/request-factory'
 
-export const useRoomList = createRequestHook<
+export const useRoomList = createRequestFactory<
   { rooms: TRoomServer[] },
   TRoom[],
   undefined

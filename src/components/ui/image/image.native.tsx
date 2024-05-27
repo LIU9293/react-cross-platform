@@ -2,8 +2,8 @@ import * as React from 'react'
 import { Image as ExpoImage } from 'expo-image'
 
 type ImageProps = Omit<React.ComponentPropsWithoutRef<typeof ExpoImage>, 'height' | 'width' | 'src'> & {
-  height: string
-  width: string
+  height?: number
+  width?: number
   src: string
 }
 
@@ -12,9 +12,7 @@ export const Image = React.forwardRef<React.ElementRef<typeof ExpoImage>, ImageP
   return (
     <ExpoImage
       source={src}
-      // @ts-expect-error
-      height={height ? parseInt(height) : undefined}
-      width={width ? parseInt(width) : undefined}
+      style={{ height: height || '100%', width: width || '100%'}}
       {...props}
     />
   )

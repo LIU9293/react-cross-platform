@@ -2,7 +2,7 @@ import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/components/ui/input-otp"
+} from "./ui/web"
 import {
   OTPProps,
   REGEXP_ONLY_DIGITS,

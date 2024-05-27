@@ -43,6 +43,13 @@ export function InputOPT ({
     }
   }, [opt])
 
+  useEffect(() => {
+    if (opt.length === 0) {
+      // @ts-expect-error
+      inputRefs[0].current.focus()
+    }
+  }, [])
+
   return (
     <View className='flex flex-row gap-2 flex-1 w-full mb-12'>
       {new Array(length).fill(null).map((_, index) => (

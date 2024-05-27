@@ -1,9 +1,14 @@
 import { View, Text } from '@/components/ui'
 import { RoomCard } from "@/components/room-card"
 import { useRoomList } from '@/store/room-list'
+import { useEffect } from 'react'
  
 export function RoomList () {
-  const { data: roomList, loading } = useRoomList()
+  const { data: roomList, loading, fetch } = useRoomList()
+
+  useEffect(() => {
+    fetch()
+  }, [])
   
   return (
     <View className='flex flex-col items-center gap-4 w-full box-border'>
