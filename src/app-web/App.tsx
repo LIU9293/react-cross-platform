@@ -1,8 +1,22 @@
 import { useState } from 'react'
-import { Button } from '@/components/ui'
-import { RoomList } from "@/containers/room-list"
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom"
+import { Homepage } from "@/containers/homepage"
 import { AuthContainer } from '@/containers/auth-container'
 import { Dialog, DialogContent } from "@/components/ui/dialog"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Homepage />,
+  },
+  {
+    path: "/room-detail/:id",
+    element: <div>Room Detail</div>,
+  }
+])
 
 export default function App() {
   const [isLoginDialogOpen, setIsLoginDialogOpen] = useState(false)
@@ -13,8 +27,7 @@ export default function App() {
 
   return (
     <div className="p-2 flex flex-col items-center">
-      <RoomList />
-      <Button onClick={onShowLoginDialog}>Login</Button>
+      <RouterProvider router={router} />
       <Dialog open={isLoginDialogOpen} onOpenChange={value => {
         setIsLoginDialogOpen(value)
       }}>

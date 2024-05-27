@@ -4,6 +4,9 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [react()],
+  define: {
+    "process.env.VITE_TARGET": !!process.env.TARO_ENV ? "mini" : "web",
+  },
   resolve: {
     extensions: !!process.env.TARO_ENV
       ? [".mini.tsx", ".mini.ts", ".tsx", ".ts", ".json"]

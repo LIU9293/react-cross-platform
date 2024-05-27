@@ -23,3 +23,16 @@ export function distance (lat1: number, lon1: number, lat2: number, lon2: number
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
   return earthRadiusKm * c * 1000
 }
+
+export function getPlatform () {
+  // Detail corss platform env variables
+  if (window && window.document) {
+    return 'mini'
+  }
+
+  if (!!process.env.TARO_ENV) {
+    return 'mini'
+  }
+
+  return 'native'
+}

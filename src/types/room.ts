@@ -5,6 +5,7 @@ export type TRoomServer = {
   cover: string
   images: string[]
   isActive: boolean
+  isTemporaryClosed: boolean
 }
 
 export type TRoom = {
@@ -23,6 +24,9 @@ export type TRoom = {
   capacity: number
   available: number
   promitionTag?: string
+
+  isActive: boolean
+  isTemporaryClosed: boolean
 }
 
 export function transformType (data: TRoomServer): TRoom {
@@ -38,6 +42,8 @@ export function transformType (data: TRoomServer): TRoom {
     latitude: 0,
     longitude: 0,
     capacity: 0,
-    available: 0
+    available: 0,
+    isActive: data.isActive,
+    isTemporaryClosed: data.isTemporaryClosed
   }
 }
