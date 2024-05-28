@@ -1,5 +1,3 @@
-import { useGlobalStore } from "@/store/global"
-
 export async function request({
   url,
   method,
@@ -11,9 +9,6 @@ export async function request({
   header?: Record<string, string>
   payload?: Record<string, any>
 }) {
-  const { data } = useGlobalStore.getState()
-  console.log(data?.token)
-  
   const response = await fetch(url, {
     method,
     headers: header,
