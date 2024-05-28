@@ -1,6 +1,6 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "taro-test",
+  "projectname": "react-cross-platform",
   "description": "",
   "appid": "touristappid",
   "setting": {

@@ -1,9 +1,10 @@
 import { View, Text } from '@tarojs/components'
+import { Profile } from '@/containers/profile'
 
-export default function RoomDetail () {
+export default function ProfilePage () {
   return (
     <View className='flex flex-col p-2 w-full box-border'>
-      <Text>Room Detail</Text>
+      <Profile />
     </View>
   )
 }

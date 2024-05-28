@@ -2,20 +2,32 @@ import { getPlatform } from '@/lib/utils'
 import { pageConfig } from './config'
 import { push, pull } from './navigate'
 
-export function route ({
-  action = 'push',
-  pageKey,
-  params,
-  query
-}: {
-  action?: 'push' | 'pull',
-  pageKey: keyof typeof pageConfig,
+type RouteParams = {
   params?: { [key: string]: string | number | boolean },
   query?: { [key: string]: string | number | boolean }
-}) {
+}
 
-  const page = pageConfig[pageKey]
+type PushParams = {
+  action: 'push',
+  pageKey: keyof typeof pageConfig
+} & RouteParams
+
+type PullParams = {
+  action: 'pull'
+} & RouteParams
+
+type RouteOptions = PushParams | PullParams
+
+export function route (options: RouteOptions) {
+  const { action, params, query } = options
+
+  if (action === 'pull') {
+    return pull()
+  }
+
+  const page = pageConfig[options.pageKey]
   const platform = getPlatform()
+  
   console.log(platform)
   let path = page[platform]
 
@@ -32,7 +44,5 @@ export function route ({
 
   if (action === 'push') {
     push(path)
-  } else if (action === 'pull') {
-    pull()
   }
 }

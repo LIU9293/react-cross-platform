@@ -1,12 +1,12 @@
 export const pageConfig = {
-  "Homepage": {
+  homepage: {
     web: "/",
     mini: "/",
     native: "/"
   },
-  "RoomDetail": {
-    web: "/room-detail/:id",
-    mini: "/app-mini/room-detail/index",
-    native: "/room-detail/:id"
+  profile: {
+    web: "/profile",
+    mini: "/app-mini/profile/index",
+    native: "/profile"
   }
 }

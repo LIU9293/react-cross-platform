@@ -35,9 +35,7 @@ export function createRequestFactory<T, U, P>(requestObject: RequestObject<T, U,
 
       try {
         const serverData = await request({
-          url: requestObject.url
-            ? `https://prod.mogroom.com/api${requestObject.url}`
-            : 'https://prod.mogroom.com/api/app/summary',
+          url: requestObject.url as string,
           method: requestObject.method || 'GET',
           header: requestObject.headers || {},
           payload: requestObject.payload as (Record<string, any> | undefined),

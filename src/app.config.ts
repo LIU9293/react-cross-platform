@@ -3,7 +3,7 @@
 export default defineAppConfig({
   pages: [
     'app-mini/index/index',
-    'app-mini/room-detail/index'
+    'app-mini/profile/index'
   ],
   window: {
     backgroundTextStyle: 'light',
